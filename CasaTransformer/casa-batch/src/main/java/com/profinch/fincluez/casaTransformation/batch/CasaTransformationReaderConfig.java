@@ -34,7 +34,7 @@ public class CasaTransformationReaderConfig {
             e.printStackTrace();
         }
         reader.setDataSource(dataSource);
-        reader.setPageSize(4);
+        reader.setPageSize(5);
         reader.setRowMapper(new BeanPropertyRowMapper<CasaTransformationQueue>(CasaTransformationQueue.class));
         return reader;
     }

@@ -56,7 +56,7 @@ public class CasaTransformationJobConfig {
 				.processor(casaTransformationProcessor)
 				.writer(casaTransformationWriter)
 				.taskExecutor(taskExecutor())
-				.throttleLimit(3)
+				.throttleLimit(2)
 				.build();
 	}
 	
