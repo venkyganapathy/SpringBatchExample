@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.batch;
+package com.profinch.fincluez.casaTransformation.batch.step2;
 
 import com.profinch.fincluez.casaTransformation.constants.ProcessStatus;
 import com.profinch.fincluez.casaTransformation.core.CasaTransformationBL;
@@ -31,8 +31,9 @@ public class CasaTransformationProcessor implements ItemProcessor<CasaTransforma
     @Override
     public CasaTransformationModel process(CasaTransformationQueue casaTransformationQueue) throws Exception {
 
+        log.debug("Inside...Processor...with BranchCode {}",casaTransformationQueue.getBranchCode());
+        log.debug("Inside...Processor...with AccountNumber {}", casaTransformationQueue.getCustomerAccountNumber());
         log.debug("Inside...Processor...with ELRunDate {}", casaTransformationQueue.getElRunDate());
-        log.debug("Inside...Processor...with AccountNumber {}", casaTransformationQueue.getAccountNumber());
 
         CasaTransformationModel casaTransformationModel = new CasaTransformationModel();
 

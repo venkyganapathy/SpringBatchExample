@@ -19,6 +19,8 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   batch:
     initialize-schema: always
+    job:
+      enabled: false
   application:
     name: FinCluez-Casa-Transformation
   banner:

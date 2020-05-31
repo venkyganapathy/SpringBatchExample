@@ -18,13 +18,19 @@ import java.sql.Timestamp;
 public class CasaTransformationQueue implements Serializable {
 
     @Id
-    private String accountNumber;
+    private String entityCode;
+    @Id
+    private String branchCode;
+    @Id
+    private String customerAccountNumber;
     @Id
     private Date elRunDate;
-    private String branchCode;
+
     @Enumerated(EnumType.STRING)
     private ProcessStatus transformationProcessStatus;
+
     private Timestamp processedTimeStamp;
+    private Timestamp queuedTimeStamp;
 
     @Override
     public String toString() {

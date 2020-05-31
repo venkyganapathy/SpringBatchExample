@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.batch;
+package com.profinch.fincluez.casaTransformation.batch.step2;
 
 import com.profinch.fincluez.casaTransformation.model.CasaTransformationModel;
 import com.profinch.fincluez.casaTransformation.repo.CasaMartRepo;

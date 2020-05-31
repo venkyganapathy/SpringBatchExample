@@ -17,7 +17,9 @@ public class CasaMart {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Account_Mart_Id")
     private Long accountMartId;
-    private String accountNumber;
+    private String entityCode;
+    private String branchCode;
+    private String customerAccountNumber;
     private Date elRunDate;
     private String comments;
 

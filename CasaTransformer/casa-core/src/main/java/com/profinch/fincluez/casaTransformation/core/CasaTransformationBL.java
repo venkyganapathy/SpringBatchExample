@@ -14,15 +14,17 @@ public class CasaTransformationBL {
     private Logger log = LoggerFactory.getLogger(CasaTransformationBL.class);
 
     public CasaMart doTransformation(CasaTransformationQueue casaTransformationQueue) throws InterruptedException {
-        log.debug("Inside....AccountTransformationBL--doTransformation....with Account {}", casaTransformationQueue.getAccountNumber());
+        log.debug("Inside....AccountTransformationBL--doTransformation....with Account {}", casaTransformationQueue.getCustomerAccountNumber());
 
         CasaMart casaMart = new CasaMart();
-        casaMart.setAccountNumber(casaTransformationQueue.getAccountNumber());
+        casaMart.setEntityCode(casaTransformationQueue.getEntityCode());
+        casaMart.setBranchCode(casaTransformationQueue.getBranchCode());
+        casaMart.setCustomerAccountNumber(casaTransformationQueue.getCustomerAccountNumber());
         casaMart.setElRunDate(casaTransformationQueue.getElRunDate());
         casaMart.setComments("Done with the Transformation at Time -- "+new Timestamp(new Date().getTime()));
 
         log.debug("Transformation Process in Progress....");
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         log.debug("Done with Transformation...exiting");
 
         return casaMart;

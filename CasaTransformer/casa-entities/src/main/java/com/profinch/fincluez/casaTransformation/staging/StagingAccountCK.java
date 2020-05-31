@@ -1,17 +1,12 @@
 package com.profinch.fincluez.casaTransformation.staging;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 import java.io.Serializable;
 import java.sql.Date;
 
-@Getter
-@Setter
-public class CasaTransformationQueueCK implements Serializable {
-
+public class StagingAccountCK implements Serializable {
     private String entityCode;
     private String branchCode;
     private String customerAccountNumber;
