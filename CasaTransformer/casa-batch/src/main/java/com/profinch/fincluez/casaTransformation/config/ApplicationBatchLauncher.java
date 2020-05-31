@@ -61,7 +61,7 @@ public class ApplicationBatchLauncher implements CommandLineRunner {
 		log.debug("AppLauncher --> Inside....getElRunDateToBeRun.....");
 		Date elRunDateToBeRun = new Date();
 		List<TransformationJobStatus> transformationJobStatusList =
-				transformationJobStatusRepo.findByJobNameAndStepNameOrderByElRunDateDesc
+				transformationJobStatusRepo.findTop1ByJobNameAndStepNameOrderByElRunDateDesc
 						(JobName.CASA_TRANSFORMATION_JOB.toString()
 								,JobName.CASA_TRANSFORMATION_JOB.toString());
 		log.debug("AppLauncher --> transformationJobStatusList....{}",transformationJobStatusList.toString());
