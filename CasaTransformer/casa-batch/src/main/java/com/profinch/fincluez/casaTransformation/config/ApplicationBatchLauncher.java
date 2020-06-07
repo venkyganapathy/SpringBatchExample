@@ -1,26 +1,21 @@
 package com.profinch.fincluez.casaTransformation.config;
 
 
-import com.profinch.fincluez.casaTransformation.library.TransformationJobStatus;
-import com.profinch.fincluez.casaTransformation.repo.TransformationJobStatusRepo;
+import com.profinch.fincluez.casaTransformation.mart.TransformationJobStatus;
+import com.profinch.fincluez.casaTransformation.repoMart.TransformationJobStatusRepo;
 import org.apache.commons.lang.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.support.SimpleJobLauncher;
-import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
-import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRepository;
-import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Configuration

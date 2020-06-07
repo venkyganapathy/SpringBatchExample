@@ -1,8 +1,8 @@
 package com.profinch.fincluez.casaTransformation.batch.step2;
 
 import com.profinch.fincluez.casaTransformation.model.CasaTransformationModel;
-import com.profinch.fincluez.casaTransformation.repo.CasaMartRepo;
-import com.profinch.fincluez.casaTransformation.repo.CasaTransformationQueueRepo;
+import com.profinch.fincluez.casaTransformation.repoMart.CasaMartRepo;
+import com.profinch.fincluez.casaTransformation.repoMart.CasaTransformationQueueRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -26,6 +26,7 @@ public class CasaTransformationWriter implements ItemWriter<CasaTransformationMo
                                     CasaTransformationQueueRepo casaTransformationQueueRepo) {
         this.casaMartRepo = casaMartRepo;
         this.casaTransformationQueueRepo = casaTransformationQueueRepo;
+
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.profinch.fincluez.casaTransformation.batch.step1.CasaQueuePopulatorWr
 import com.profinch.fincluez.casaTransformation.batch.step2.CasaTransformationProcessor;
 import com.profinch.fincluez.casaTransformation.batch.step2.CasaTransformationWriter;
 import com.profinch.fincluez.casaTransformation.model.CasaTransformationModel;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import com.profinch.fincluez.casaTransformation.staging.StagingAccount;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +15,6 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.step.builder.SimpleStepBuilder;
-import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.beans.factory.annotation.Autowired;

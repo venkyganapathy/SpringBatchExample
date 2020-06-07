@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.library;
+package com.profinch.fincluez.casaTransformation.mart;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;

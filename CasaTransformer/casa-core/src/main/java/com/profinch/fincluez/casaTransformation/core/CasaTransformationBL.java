@@ -1,7 +1,7 @@
 package com.profinch.fincluez.casaTransformation.core;
 
 import com.profinch.fincluez.casaTransformation.mart.CasaMart;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

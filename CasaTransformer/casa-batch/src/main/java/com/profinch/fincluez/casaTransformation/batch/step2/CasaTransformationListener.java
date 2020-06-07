@@ -1,8 +1,8 @@
 package com.profinch.fincluez.casaTransformation.batch.step2;
 
 import com.profinch.fincluez.casaTransformation.config.JobName;
-import com.profinch.fincluez.casaTransformation.library.TransformationJobStatus;
-import com.profinch.fincluez.casaTransformation.repo.TransformationJobStatusRepo;
+import com.profinch.fincluez.casaTransformation.mart.TransformationJobStatus;
+import com.profinch.fincluez.casaTransformation.repoMart.TransformationJobStatusRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.ExitStatus;

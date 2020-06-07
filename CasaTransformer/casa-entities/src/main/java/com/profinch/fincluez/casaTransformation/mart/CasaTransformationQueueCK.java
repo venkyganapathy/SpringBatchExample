@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.staging;
+package com.profinch.fincluez.casaTransformation.mart;
 
 import lombok.Getter;
 import lombok.Setter;

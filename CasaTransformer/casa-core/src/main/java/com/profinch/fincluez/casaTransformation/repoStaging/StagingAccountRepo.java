@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.repo;
+package com.profinch.fincluez.casaTransformation.repoStaging;
 
 import com.profinch.fincluez.casaTransformation.staging.StagingAccount;
 import com.profinch.fincluez.casaTransformation.staging.StagingAccountCK;

@@ -17,14 +17,14 @@ public class CasaQueuePopulatorCursorReaderConfig {
     private Logger log = LoggerFactory.getLogger(CasaQueuePopulatorCursorReaderConfig.class);
 
     @Autowired
-    private DataSource dataSource;
+    private DataSource stagingDataSource;
 
     @Bean
     public ItemReader<? extends StagingAccount> casaQueuePopulatorCursorReader() {
         log.debug("*************** STEP-1C ************** Configuration");
         log.debug("inside....casaQueuePopulatorCursorReader -- Instantiation");
         JdbcCursorItemReader<StagingAccount> reader = new JdbcCursorItemReader<StagingAccount>();
-        reader.setDataSource(dataSource);
+        reader.setDataSource(stagingDataSource);
         reader.setName("CasaTransformationQueuePopulatorReader");
         reader.setSql("select * from staging_account");
         //reader.setSql("select * from staging_account where branch_code=:branch and entity_code=:entityCode and elRunDate=:elRunDate");

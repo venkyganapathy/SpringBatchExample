@@ -1,8 +1,8 @@
-package com.profinch.fincluez.casaTransformation.repo;
+package com.profinch.fincluez.casaTransformation.repoMart;
 
 import com.profinch.fincluez.casaTransformation.constants.ProcessStatus;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueueCK;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueueCK;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

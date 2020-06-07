@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.library;
+package com.profinch.fincluez.casaTransformation.mart;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 @IdClass(TransformationJobStatusCK.class)
+//@Table(name= "transformation_job_status", schema = "fincluez_mart")
 public class TransformationJobStatus implements Serializable {
 
     @Id

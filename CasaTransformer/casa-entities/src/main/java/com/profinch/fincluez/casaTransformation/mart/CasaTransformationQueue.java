@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.staging;
+package com.profinch.fincluez.casaTransformation.mart;
 
 import com.profinch.fincluez.casaTransformation.constants.ProcessStatus;
 import lombok.Getter;
@@ -15,6 +15,7 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @IdClass(CasaTransformationQueueCK.class)
+//@Table(name= "casa_transformation_queue", schema = "fincluez_mart")
 public class CasaTransformationQueue implements Serializable {
 
     @Id

@@ -8,6 +8,7 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.database.JdbcPagingItemReader;
 import org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,8 @@ public class CasaQueuePopulatorPagingReaderConfig {
     private Logger log = LoggerFactory.getLogger(CasaQueuePopulatorPagingReaderConfig.class);
 
     @Autowired
-    private DataSource dataSource;
+    @Qualifier("stagingDataSource")
+    private DataSource stagingDataSource;
 
     @Bean
     @StepScope
@@ -39,7 +41,7 @@ public class CasaQueuePopulatorPagingReaderConfig {
         JdbcPagingItemReader<StagingAccount> reader = new JdbcPagingItemReader<StagingAccount>();
 
         final SqlPagingQueryProviderFactoryBean sqlPagingQueryProviderFactoryBean = new SqlPagingQueryProviderFactoryBean();
-        sqlPagingQueryProviderFactoryBean.setDataSource(dataSource);
+        sqlPagingQueryProviderFactoryBean.setDataSource(stagingDataSource);
         sqlPagingQueryProviderFactoryBean.setSelectClause("select *");
         sqlPagingQueryProviderFactoryBean.setFromClause("from staging_account");
         sqlPagingQueryProviderFactoryBean.setWhereClause("where entity_code = :entityCode and branch_code = :branchCode and el_run_date = :elRunDate");
@@ -56,7 +58,7 @@ public class CasaQueuePopulatorPagingReaderConfig {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        reader.setDataSource(dataSource);
+        reader.setDataSource(stagingDataSource);
         reader.setPageSize(5);
         reader.setRowMapper(new BeanPropertyRowMapper<StagingAccount>(StagingAccount.class));
         return reader;

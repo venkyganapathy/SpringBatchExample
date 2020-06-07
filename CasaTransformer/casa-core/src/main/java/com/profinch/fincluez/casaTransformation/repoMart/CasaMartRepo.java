@@ -1,4 +1,4 @@
-package com.profinch.fincluez.casaTransformation.repo;
+package com.profinch.fincluez.casaTransformation.repoMart;
 
 import com.profinch.fincluez.casaTransformation.mart.CasaMart;
 import org.springframework.data.jpa.repository.JpaRepository;

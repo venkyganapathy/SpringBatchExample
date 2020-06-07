@@ -8,6 +8,7 @@ import org.apache.commons.lang.builder.ToStringStyle;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -15,6 +16,7 @@ import java.sql.Date;
 @Getter
 @Setter
 @IdClass(StagingAccountCK.class)
+//@Table(name= "staging_account", schema = "fincluez_staging")
 public class StagingAccount implements Serializable {
 
     @Id

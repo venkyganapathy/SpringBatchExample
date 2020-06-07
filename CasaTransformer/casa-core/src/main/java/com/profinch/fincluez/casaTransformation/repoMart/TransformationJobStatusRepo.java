@@ -1,9 +1,8 @@
-package com.profinch.fincluez.casaTransformation.repo;
+package com.profinch.fincluez.casaTransformation.repoMart;
 
-import com.profinch.fincluez.casaTransformation.library.TransformationJobStatus;
-import com.profinch.fincluez.casaTransformation.library.TransformationJobStatusCK;
+import com.profinch.fincluez.casaTransformation.mart.TransformationJobStatus;
+import com.profinch.fincluez.casaTransformation.mart.TransformationJobStatusCK;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.QueryHints;
 
 import java.util.Date;
 import java.util.List;

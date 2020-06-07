@@ -4,7 +4,7 @@ import com.profinch.fincluez.casaTransformation.constants.ProcessStatus;
 import com.profinch.fincluez.casaTransformation.core.CasaTransformationBL;
 import com.profinch.fincluez.casaTransformation.mart.CasaMart;
 import com.profinch.fincluez.casaTransformation.model.CasaTransformationModel;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;

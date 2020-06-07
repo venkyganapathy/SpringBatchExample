@@ -1,6 +1,6 @@
 package com.profinch.fincluez.casaTransformation.batch.step2;
 
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemReader;
@@ -18,7 +18,7 @@ public class CasaTransformationCursorReaderConfig {
     private Logger log = LoggerFactory.getLogger(CasaTransformationCursorReaderConfig.class);
 
     @Autowired
-    private DataSource dataSource;
+    private DataSource martDataSource;
 
     @Bean
     public ItemReader<? extends CasaTransformationQueue> casaTransformationCursorReader() {
@@ -26,7 +26,7 @@ public class CasaTransformationCursorReaderConfig {
         log.debug("inside....casaTransformationCursorReaderConfig -- Instantiation");
 
         JdbcCursorItemReader<CasaTransformationQueue> reader = new JdbcCursorItemReader<CasaTransformationQueue>();
-        reader.setDataSource(dataSource);
+        reader.setDataSource(martDataSource);
         reader.setName("CasaTransformationQueueReader");
         reader.setSql("select * from casa_transformation_queue where transformation_process_status = \'UNPROCESSED\' order by customer_account_number");
         reader.setRowMapper(new BeanPropertyRowMapper<CasaTransformationQueue>(CasaTransformationQueue.class));

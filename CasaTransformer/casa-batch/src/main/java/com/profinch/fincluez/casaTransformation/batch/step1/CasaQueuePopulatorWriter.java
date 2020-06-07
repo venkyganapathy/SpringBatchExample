@@ -1,7 +1,7 @@
 package com.profinch.fincluez.casaTransformation.batch.step1;
 
-import com.profinch.fincluez.casaTransformation.repo.CasaTransformationQueueRepo;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.repoMart.CasaTransformationQueueRepo;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;

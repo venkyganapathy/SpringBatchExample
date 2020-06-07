@@ -2,7 +2,7 @@ package com.profinch.fincluez.casaTransformation.batch.step1;
 
 import com.profinch.fincluez.casaTransformation.constants.ProcessStatus;
 import com.profinch.fincluez.casaTransformation.core.CasaTransformationBL;
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import com.profinch.fincluez.casaTransformation.staging.StagingAccount;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

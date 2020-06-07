@@ -11,11 +11,12 @@ import java.sql.Date;
 @Entity
 @Getter
 @Setter
-@SequenceGenerator(name="Account_Mart_Id")
+@SequenceGenerator(name="account_mart_id_seq")
+//@Table(name= "casa_mart", schema = "fincluez_mart")
 public class CasaMart {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Account_Mart_Id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="account_mart_id_seq")
     private Long accountMartId;
     private String entityCode;
     private String branchCode;

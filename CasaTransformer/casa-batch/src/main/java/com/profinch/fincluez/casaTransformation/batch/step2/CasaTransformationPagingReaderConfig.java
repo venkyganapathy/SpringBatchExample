@@ -1,6 +1,6 @@
 package com.profinch.fincluez.casaTransformation.batch.step2;
 
-import com.profinch.fincluez.casaTransformation.staging.CasaTransformationQueue;
+import com.profinch.fincluez.casaTransformation.mart.CasaTransformationQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
@@ -8,6 +8,7 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.database.JdbcPagingItemReader;
 import org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,8 @@ public class CasaTransformationPagingReaderConfig {
     private Logger log = LoggerFactory.getLogger(CasaTransformationPagingReaderConfig.class);
 
     @Autowired
-    private DataSource dataSource;
+    @Qualifier("martDataSource")
+    private DataSource martDataSource;
 
     @Bean
     @StepScope
@@ -37,7 +39,7 @@ public class CasaTransformationPagingReaderConfig {
         JdbcPagingItemReader<CasaTransformationQueue> reader = new JdbcPagingItemReader<CasaTransformationQueue>();
 
         final SqlPagingQueryProviderFactoryBean sqlPagingQueryProviderFactoryBean = new SqlPagingQueryProviderFactoryBean();
-        sqlPagingQueryProviderFactoryBean.setDataSource(dataSource);
+        sqlPagingQueryProviderFactoryBean.setDataSource(martDataSource);
         sqlPagingQueryProviderFactoryBean.setSelectClause("select *");
         sqlPagingQueryProviderFactoryBean.setFromClause("from casa_transformation_queue");
         sqlPagingQueryProviderFactoryBean.setWhereClause("where entity_code = :entityCode" +
@@ -57,7 +59,7 @@ public class CasaTransformationPagingReaderConfig {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        reader.setDataSource(dataSource);
+        reader.setDataSource(martDataSource);
         reader.setPageSize(5);
         reader.setRowMapper(new BeanPropertyRowMapper<CasaTransformationQueue>(CasaTransformationQueue.class));
         return reader;
